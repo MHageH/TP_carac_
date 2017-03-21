@@ -32,8 +32,6 @@
 
 \section{Introduction}
 
-\section{Description G\'en\'erale}
-
 Le but principal de ce TP est de caract\'eriser les 2 composantes principales du transistor MOS :
 
 \begin{figure}[!htb]
@@ -119,7 +117,6 @@ On retrouve que c'est possible de d\'eterminer ces 2 facteurs :
 \caption{Passage en \'echelle logarithmique}
 \end{figure}
 
-Pour la d\'etermination de $n$, on sait que pour $n=1$, on a un $\Delta V$ de $60 \phantom{2} mV$ pour une d\'ecade. 
 
 \textbf{D\'etermination de $V_a$ et $V_{th}$} 
 
@@ -134,8 +131,65 @@ Pour la caract\'erisation des diodes, on utilise le Hwelett Packard 4155A Semico
 \caption{Diode de grande surface et petit p\'erim\`etre, surface $200 \times 200 \mu m^{2}$}
 \end{figure}
 
-La plaque principale de l'outil de mesure est polaris\'ee en inverse : on affiche les valeurs de I en fonction de V (courbe initialement \`a l'inverse), et on retrouve $V_{th} = 0.678 \phantom{2} V$ 
+La plaque principale de l'outil de mesure est polaris\'ee en inverse : on affiche les valeurs de I en fonction de V (courbe initialement \`a l'inverse), et on retrouve $V_{th} = 0.678 \phantom{2} V$.
 
+La d\'etermination de $V_a$ s'effectue d'une fa\c con similaire : On adjuste la tension pour un balayage entre 0 et 30 V (polarization inverse) : On retrouve qu'il y a des fortes d\'erives de courant autour de 19 V. L'appareil est limit\'e en courant maximal d\'elivr\'e sur la diode, ce qui permet de protoger le wafer en cas de forte tensions.
+
+\textbf{Calcul de n }
+D'apr\`es les mesures de la pente en fonctionnement directe de la diode, on peut remonter vers le coefficient N (facteur d'id\'ealit\'e) : n = 1.76  
+
+\section{Capaci\'e MOS}
+\subsection{M\'ethodes de Calcul}
+Pour caract\'eriser la capacit\'e MOS, on doit la polariser en $ V_G > V_t > 0 $ avec $V_D > 0$. Celle-ci va fonctionner en r\'egime d'inversion, la dynamique de $C=f(V)$ repr\'esente ce fonctionnement.
+
+\clearpage
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.40]{allure_dynamique_MOS.jpg}
+\caption{Allure de la capacit\'e MOS pour des variations de V}
+\end{figure}
+
+Le plateau form\'e par la prolongation de la zone d'accumulation d\'etermine $C_{ox} = \frac{\epsilon_{ox}}{t_{ox}}$. On peut aussi d\'eterminer la tension 
+$V_{FB}$ :
+
+\[
+	V_{FB} = \Phi_{ms} - \frac{Q_{ox}}{C_{ox}}
+\]
+
+Les valeurs de $V_{FB}$, $\Phi_{ms}$ et $C_{ox}$ peuvent \^etre d\'eterminer automatiquement.
+
+\subsection{Mise en pratique}
+On v\'erfie le placement correcte du wafer dans la zone sp\'ecifi\'ee. La capacit\'ee \`a d\'eterminer est de surface $ 320 \times 200 \mu m^{2}$, et on sp\'ecifie la ``Gate work function'' pour l'Aluminium de 4.2.
+
+On retrouve que (pour une temp\'erature de 23 C)
+\begin{itemize}
+\item[-] $C_{ox} = 43.5 pF$
+\item[-] $R_s = 558 \Omega$
+\item[-] $T_{ox} = 501 A$
+\item[-] $\frac{C_{FB}}{C_{ox}} = 0.82$
+\item[-] $V_{FB} = -4.57 V$
+\item[-] $\Phi_{ms} = -0.869 V$
+\item[-] $N_{sub} = 1.47 \times 10 ^{16} /cm^{3}$
+\end{itemize}
+
+\clearpage
+
+Le r\'esultat de la mesure est repr\'esent\'e par la figure 6.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.35]{allure_reelle_.jpg}
+\caption{Mesure de la capacit\'e MOS pour des variations de V}
+\end{figure}
+
+On sait que : 
+\[
+	V_{FB} = \Phi_{ms} - \frac{Q_{ox}}{C_{ox}}
+\]
+\[
+\implies	V_{FB} = \Phi_{ms} - \frac{Q_{ox}}{C_{ox}}
+\]
 
 \section{Conclusion}
 
